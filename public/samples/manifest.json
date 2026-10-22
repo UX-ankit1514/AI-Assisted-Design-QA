@@ -1,0 +1,67 @@
+{
+  "note": "Generated sample data with intentional differences. Not a real Arnifi page or capture.",
+  "width": 1440,
+  "height": 3083,
+  "changes": [
+    {
+      "id": "hero-heading",
+      "label": "Hero heading set smaller",
+      "rect": {
+        "x": 160,
+        "y": 250,
+        "width": 616,
+        "height": 204
+      }
+    },
+    {
+      "id": "header-cta",
+      "label": "Header CTA uses an off-token blue",
+      "rect": {
+        "x": 1024,
+        "y": 67,
+        "width": 256,
+        "height": 48
+      }
+    },
+    {
+      "id": "nav",
+      "label": "Navigation links spaced more tightly",
+      "rect": {
+        "x": 326,
+        "y": 79,
+        "width": 560,
+        "height": 24
+      }
+    },
+    {
+      "id": "banking-icon",
+      "label": "Corporate banking icon missing",
+      "rect": {
+        "x": 951,
+        "y": 1007,
+        "width": 300,
+        "height": 40
+      }
+    },
+    {
+      "id": "visa-copy",
+      "label": "Visa card copy changed",
+      "rect": {
+        "x": 570,
+        "y": 1099,
+        "width": 300,
+        "height": 44
+      }
+    },
+    {
+      "id": "footer-links",
+      "label": "Footer links use a different colour",
+      "rect": {
+        "x": 838,
+        "y": 2806,
+        "width": 205,
+        "height": 152
+      }
+    }
+  ]
+}

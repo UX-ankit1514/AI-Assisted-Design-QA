@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Arnifi Design System tokens (Figma "Design System", v1.0.0), light theme only.
+ * The default Tailwind palette is cleared so every colour class maps to a DS token.
+ * shadcn/ui's semantic names (primary, border, ring, …) are aliased to the same tokens at the end.
+ */
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Arnique — primary brand */
+  --color-arnique-100: #f5f5ff;
+  --color-arnique-200: #ebebff;
+  --color-arnique-300: #d6d6ff;
+  --color-arnique-400: #c7c7ff;
+  --color-arnique-500: #a6a6f5;
+  --color-arnique-600: #8282e0;
+  --color-arnique-700: #6262cc;
+  --color-arnique-800: #4646b8;
+  --color-arnique-900: #2e2ea3;
+  --color-arnique-1000: #16167a;
+  --color-arnique-1100: #070752;
+
+  /* Dusk — cool grey, default UI neutral */
+  --color-dusk-200: #f2f4f8;
+  --color-dusk-300: #dde1e6;
+  --color-dusk-400: #c1c7cd;
+  --color-dusk-500: #a2a9b0;
+  --color-dusk-600: #878d96;
+  --color-dusk-700: #697077;
+  --color-dusk-800: #4d5358;
+  --color-dusk-900: #343a3f;
+  --color-dusk-1000: #21272a;
+  --color-dusk-1100: #121619;
+
+  /* Dawn — warm grey */
+  --color-dawn-200: #f7f3f2;
+  --color-dawn-300: #e5e0df;
+
+  /* Semantic hues */
+  --color-ruby-100: #fff1f0;
+  --color-ruby-200: #ffccc7;
+  --color-ruby-500: #ff4d4f;
+  --color-ruby-600: #f5222d;
+  --color-ruby-700: #cf1322;
+  --color-ruby-800: #a8071a;
+  --color-moss-100: #f6ffed;
+  --color-moss-200: #d9f7be;
+  --color-moss-700: #389e0d;
+  --color-moss-800: #237804;
+  --color-tang-100: #fff7e6;
+  --color-tang-200: #ffe7ba;
+  --color-tang-500: #ffa940;
+  --color-tang-700: #d46b08;
+  --color-tang-800: #ad4e00;
+  --color-trueblue-100: #e6f4ff;
+  --color-trueblue-200: #bae0ff;
+  --color-trueblue-700: #0958d9;
+  --color-trueblue-800: #003eb3;
+
+  /* Semantic aliases (Color_tokens, light mode) */
+  --color-brand: var(--color-arnique-900);
+  --color-brand-hover: var(--color-arnique-1000);
+  --color-heading: var(--color-arnique-1000);
+  --color-ink: var(--color-dusk-1000);
+  --color-muted: var(--color-dusk-700);
+  --color-line: var(--color-dusk-300);
+  --color-line-hover: var(--color-dusk-500);
+  --color-focus: var(--color-arnique-500);
+  --color-tint: var(--color-arnique-100);
+  --color-cool: var(--color-dusk-200);
+  /* Differences and errors are always Ruby (PRD §8: red for comparison highlights and confirmed errors) */
+  --color-diff: var(--color-ruby-500);
+  --color-diff-strong: var(--color-ruby-700);
+
+  /* shadcn/ui aliases → DS tokens */
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-dusk-1000);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-dusk-1000);
+  --color-popover: var(--color-white);
+  --color-popover-foreground: var(--color-dusk-1000);
+  --color-primary: var(--color-arnique-900);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-arnique-200);
+  --color-secondary-foreground: var(--color-arnique-1100);
+  --color-muted-foreground: var(--color-dusk-700);
+  --color-accent: var(--color-dusk-200);
+  --color-accent-foreground: var(--color-dusk-1000);
+  --color-destructive: var(--color-ruby-700);
+  --color-border: var(--color-dusk-300);
+  --color-input: var(--color-dusk-300);
+  --color-ring: var(--color-arnique-500);
+
+  /* Type: Inter (UI) + Lora (page titles only) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+
+  /* Lora headings — L3 / L4 */
+  --text-l3: 2rem;
+  --text-l3--line-height: 2.5rem;
+  --text-l4: 1.75rem;
+  --text-l4--line-height: 2.25rem;
+
+  /* Inter sub-headings — SH6 / SH7 / SH8 */
+  --text-sh6: 1.5rem;
+  --text-sh6--line-height: 2rem;
+  --text-sh7: 1.125rem;
+  --text-sh7--line-height: 1.5rem;
+  --text-sh8: 0.875rem;
+  --text-sh8--line-height: 1.25rem;
+
+  /* Inter paragraphs — P1–P4 */
+  --text-p1: 1.125rem;
+  --text-p1--line-height: 1.75rem;
+  --text-p2: 1rem;
+  --text-p2--line-height: 1.5rem;
+  --text-p3: 0.875rem;
+  --text-p3--line-height: 1.25rem;
+  --text-p4: 0.75rem;
+  --text-p4--line-height: 1.125rem;
+
+  /* Special heading (eyebrow) — SPH5 */
+  --text-sph5: 0.75rem;
+  --text-sph5--line-height: 1.125rem;
+  --text-sph5--letter-spacing: 0.12em;
+
+  /* Radius scale (DS names + the shadcn names mapped onto it) */
+  --radius-cta: 2px;
+  --radius-control: 4px;
+  --radius-tile: 6px;
+  --radius-card: 8px;
+  --radius-panel: 10px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-full: 9999px;
+
+  /* Effect styles — Outer Shadow / Light, Medium, Heavy Double. Controls stay flat (level 0). */
+  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.15);
+  --shadow-hover: 0 4px 8px rgb(0 0 0 / 0.1), 0 2px 6px rgb(0 0 0 / 0.15);
+  --shadow-overlay: 0 6px 12px rgb(0 0 0 / 0.15), 0 4px 8px rgb(0 0 0 / 0.2);
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: var(--shadow-raised);
+  --shadow-md: var(--shadow-overlay);
+  --shadow-lg: var(--shadow-overlay);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: var(--ease-out);
+
+  --animate-fade-in: fade-in 200ms var(--ease-out);
+  --animate-shimmer: shimmer 1s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: -100% 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-cool);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-line);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-arnique-300);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .skeleton {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-dusk-200) 25%,
+      color-mix(in srgb, var(--color-dusk-300) 55%, var(--color-white)) 50%,
+      var(--color-dusk-200) 75%
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+
+  /* Checkerboard behind screenshots so transparent areas read as transparent, not white. */
+  .checkerboard {
+    background-color: var(--color-white);
+    background-image:
+      linear-gradient(45deg, var(--color-dusk-200) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--color-dusk-200) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--color-dusk-200) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--color-dusk-200) 75%);
+    background-size: 16px 16px;
+    background-position:
+      0 0,
+      0 8px,
+      8px -8px,
+      -8px 0;
+  }
+}
